@@ -1,18 +1,23 @@
+"use client";
+
 import React, { createContext, useEffect, useState } from "react";
 
-type TypeCTX = {
+export type TypeCTX = {
   theme: "dark" | "light";
   handleSetTheme: () => void;
+  isDark: boolean;
 };
 
 export const ThemeContext = createContext<TypeCTX>({
   theme: "dark",
   handleSetTheme: () => undefined,
+  isDark: true,
 });
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const isNotSSR = typeof window !== "undefined";
   const [theme, setTheme] = useState<TypeCTX["theme"]>(
-    (localStorage.getItem("theme") as TypeCTX["theme"]) ?? "light"
+    isNotSSR ? (localStorage.getItem("theme") as TypeCTX["theme"]) ?? "light" : "light"
   );
 
   const handleSetTheme = (theme: TypeCTX["theme"]) => {
@@ -35,7 +40,9 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, handleSetTheme: changeThemeHandler }}>
+    <ThemeContext.Provider
+      value={{ theme, handleSetTheme: changeThemeHandler, isDark: theme === "dark" }}
+    >
       {children}
     </ThemeContext.Provider>
   );

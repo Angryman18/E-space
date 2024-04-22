@@ -1,23 +1,32 @@
 import { useState } from "react";
-import { search } from "@/icons";
+import { search, search_dark, search_light } from "@/icons";
 import Image from "next/image";
+import useCtx from "@/hooks/useContext";
 
 export default function SearchBar() {
   const [isElementFocused, setIsElementFocused] = useState<boolean>(false);
-
+  const {
+    themeCtx: { isDark },
+  } = useCtx();
   return (
     <div className='my-4 mx-2'>
       <div
-        className={`flex border rounded-2xl w-[40%] min-w-64 overflow-hidden ${
+        className={`flex border-2 rounded-full w-[40%] min-w-64 overflow-hidden pr-4 ${
           isElementFocused && "border-gray-400"
         }`}
       >
         <div className='w-12 flex justify-center items-center mx-2'>
-          <Image src={search} width={20} height={20} alt='search' className='opacity-40' />
+          <Image
+            src={isDark ? search_dark : search_light}
+            width={20}
+            height={20}
+            alt='search'
+            className='opacity-50'
+          />
         </div>
         <input
           placeholder='search inside storage'
-          className='w-full border-0 py-1 text-lg outline-none'
+          className='w-full py-1 text-lg outline-none dark:bg-black dark:text-white'
           type='search'
           onFocus={setIsElementFocused.bind(null, true)}
           onBlur={setIsElementFocused.bind(null, false)}
