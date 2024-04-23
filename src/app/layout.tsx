@@ -5,6 +5,8 @@ import ThemeProvider from "@/context/ThemeCtx";
 import SideBar from "@/components/Sidebar/Sidebar";
 import BaseButtonStructure from "@/components/RecentSection/BaseButtonStructure";
 import SearchBar from "@/components/TopBar/SearchBar";
+import Recent from "@/components/RecentSection/Recent";
+import TitleText from "@/components/Text/TitleText";
 
 const inter = Inconsolata({ subsets: ["latin"], weight: "400" });
 
@@ -25,40 +27,9 @@ export default function RootLayout({
             </div>
             <div className='w-[82%]'>
               <SearchBar />
-              <hr className="my-4" />
-              <div className='overflow-x-scroll'>
-                <div className='inline-flex overflow-hidden'>
-                  <BaseButtonStructure.Create handleCreateClick={handleCreateClick} />
-                  <BaseButtonStructure
-                    folderName='Video'
-                    handleFolderClick={handleFolderClick.bind(null, "1")}
-                  />
-                  <BaseButtonStructure
-                    folderName='Images'
-                    handleFolderClick={handleFolderClick.bind(null, "1")}
-                  />
-                  <BaseButtonStructure
-                    folderName='Backups'
-                    handleFolderClick={handleFolderClick.bind(null, "1")}
-                  />
-                  <BaseButtonStructure
-                    folderName='Documents'
-                    handleFolderClick={handleFolderClick.bind(null, "1")}
-                  />
-                  <BaseButtonStructure
-                    folderName='Movies'
-                    handleFolderClick={handleFolderClick.bind(null, "1")}
-                  />
-                  <BaseButtonStructure
-                    folderName='Games'
-                    handleFolderClick={handleFolderClick.bind(null, "1")}
-                  />
-                  <BaseButtonStructure
-                    folderName='Animie'
-                    handleFolderClick={handleFolderClick.bind(null, "1")}
-                  />
-                </div>
-              </div>
+              <hr className='my-4' />
+              <TitleText text='Folders' />
+              <Recent />
               {children}
             </div>
           </div>
