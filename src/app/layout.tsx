@@ -17,7 +17,7 @@ export default function RootLayout({
   const handleCreateClick = () => console.log("Hello");
   return (
     <html lang='en'>
-      <body className={`${inter.className} dark:bg-black`}>
+      <body data-testid='layout_body' className={`${inter.className} dark:bg-black`}>
         <ThemeProvider>
           <div className='flex'>
             <div className='w-[18%]'>
