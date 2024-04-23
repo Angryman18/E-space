@@ -1,3 +1,42 @@
-.table_style {
-  @apply font-bold px-2;
+.tbody {
+  @apply border-0 font-medium;
+}
+
+.tbody tr {
+  @apply hover:bg-gray-100 dark:hover:bg-gray-700 hover:cursor-pointer duration-75 border-b;
+}
+
+.tbody tr td {
+  @apply px-2 py-4;
+}
+
+.tbody tr td:first-child {
+  @apply rounded-l-xl pl-4;
+}
+.tbody tr td:last-child {
+  @apply rounded-r-xl;
+}
+
+.tbody tr td:not(:first-child) {
+  @apply w-[18%] pl-4 font-bold;
+}
+
+/* // THEAD SECTION */
+.thead tr {
+  @apply w-full bg-gray-200 dark:text-black border-0;
+}
+
+.thead tr td {
+  @apply py-4;
+}
+
+.thead tr td:first-child {
+  @apply rounded-l-xl w-[28%] font-bold pl-4;
+}
+.thead tr td:last-child {
+  @apply rounded-r-xl;
+}
+
+.thead tr td:not(:first-child) {
+  @apply w-[18%] pl-4 font-bold;
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { search, search_dark, search_light } from "@/icons";
+import { search_dark, search_light } from "@/icons";
 import Image from "next/image";
 import useCtx from "@/hooks/useContext";
 
@@ -8,6 +8,7 @@ export default function SearchBar() {
   const {
     themeCtx: { isDark },
   } = useCtx();
+  console.log('is dark ', isDark ? search_dark : search_light)
   return (
     <div className='my-4 mx-2'>
       <div
