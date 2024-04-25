@@ -1,5 +1,5 @@
 .tbody {
-  @apply border-0 font-medium;
+  @apply border-0;
 }
 
 .tbody tr {
@@ -11,19 +11,19 @@
 }
 
 .tbody tr td:first-child {
-  @apply rounded-l-xl pl-4;
+  @apply rounded-l-xl pl-4 font-semibold;
 }
 .tbody tr td:last-child {
   @apply rounded-r-xl;
 }
 
 .tbody tr td:not(:first-child) {
-  @apply w-[18%] pl-4 font-bold;
+  @apply w-[18%] pl-4;
 }
 
 /* // THEAD SECTION */
 .thead tr {
-  @apply w-full bg-gray-200 dark:text-black border-0;
+  @apply w-full bg-gray-200 dark:text-black border-0 sticky top-0;
 }
 
 .thead tr td {
