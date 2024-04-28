@@ -5,8 +5,8 @@ import TableData from "./TableData";
 
 const Table = () => {
   return (
-    <div className='mx-2 lg:h-[320px] overflow-y-scroll'>
-      <table className='border-0 w-full dark:border-gray-500 overlflow-y-scroll h-[200px]'>
+    <div className='mx-2 overflow-y-scroll lg:max-h-[40vh] xl:max-h-[55vh] 2xl:max-h[60vh]'>
+      <table className='border-0 w-full dark:border-gray-500 overlflow-y-scroll'>
         <TableHeader className={style.thead} />
         <TableData className={style.tbody} />
       </table>

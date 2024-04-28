@@ -9,6 +9,8 @@ import search_light from "./search_lightmode.svg";
 import imageIcon from "./image.svg";
 import videoIcon from "./video-file.svg";
 import docIcon from "./document.png";
+import tableIcon from "./table.svg";
+import listIcon from "./list.svg";
 
 export {
   folder,
@@ -22,4 +24,6 @@ export {
   imageIcon,
   videoIcon,
   docIcon,
+  tableIcon,
+  listIcon,
 };

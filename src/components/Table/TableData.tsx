@@ -79,6 +79,20 @@ const TableData: React.FC<{ className: string }> = (props) => {
         <td>Video</td>
         <td>1 Day ago</td>
       </tr>
+      <tr className='dark:hover:bg-gray-700 duration-75'>
+        <DataRow iconType={videoIcon} name='My Video File' />
+        <td>FFDA256FDA95</td>
+        <td>201.62 MB</td>
+        <td>Video</td>
+        <td>1 Day ago</td>
+      </tr>
+      <tr className='dark:hover:bg-gray-700 duration-75'>
+        <DataRow iconType={videoIcon} name='My Video File' />
+        <td>FFDA256FDA95</td>
+        <td>201.62 MB</td>
+        <td>Video</td>
+        <td>1 Day ago</td>
+      </tr>
     </tbody>
   );
 };

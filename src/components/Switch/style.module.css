@@ -1,0 +1,7 @@
+.view_switch_button {
+  @apply flex items-center gap-x-2 px-2 py-1 cursor-pointer hover:bg-gray-300 border rounded-md;
+}
+
+.view_switch_button_selected {
+  @apply bg-gray-200
+}
