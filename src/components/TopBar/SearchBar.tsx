@@ -2,6 +2,7 @@ import { useState } from "react";
 import { search_dark, search_light } from "@/icons";
 import Image from "next/image";
 import useCtx from "@/hooks/useContext";
+import style from './searchbar.module.css'
 
 export default function SearchBar() {
   const [isElementFocused, setIsElementFocused] = useState<boolean>(false);
@@ -33,6 +34,7 @@ export default function SearchBar() {
           onBlur={setIsElementFocused.bind(null, false)}
         />
       </div>
+      {/* <div className={style.backdrop}></div> */}
     </div>
   );
 }

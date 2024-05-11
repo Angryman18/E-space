@@ -1,4 +1,4 @@
-import RootLayout from "@/app/layout";
+import RootLayout from "@/app/(root)/layout";
 import { screen, render } from "@testing-library/react";
 
 describe("Test for the Layout Component Rendering Properly", () => {

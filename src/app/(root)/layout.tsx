@@ -1,6 +1,6 @@
 "use client";
 import { Inconsolata } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import ThemeProvider from "@/context/ThemeCtx";
 import SideBar from "@/components/Sidebar/Sidebar";
 import SearchBar from "@/components/TopBar/SearchBar";
@@ -18,13 +18,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body
-        data-testid='layout_body'
-        className={`${inter.className} dark:bg-black transition-colors duration-300;`}
-      >
-        {children}
-      </body>
-    </html>
+    <ThemeProvider>
+      <div className='flex'>
+        <div className='w-[18%]'>
+          <SideBar />
+        </div>
+        <div className='w-[82%]'>
+          <SearchBar />
+          <hr className='my-4' />
+          <TitleText text='Folders' />
+          <Recent />
+          {children}
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }

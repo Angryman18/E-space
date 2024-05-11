@@ -1,6 +1,6 @@
 import React from "react";
 import MimeDesign from "../Mimedesign/MimeDesign";
-import { docIcon, imageIcon, videoIcon } from "@/icons";
+import { docIcon, folder, imageIcon, videoIcon } from "@/icons";
 import { StaticImageData } from "next/image";
 
 const DataRow = ({ iconType, name }: { iconType: string | StaticImageData; name: string }) => {
@@ -21,6 +21,13 @@ const TableData: React.FC<{ className: string }> = (props) => {
         <td>FFDA256FDA95</td>
         <td>25 MB</td>
         <td>Image</td>
+        <td>2 Days ago</td>
+      </tr>
+      <tr className='dark:hover:bg-gray-700 duration-75'>
+        <DataRow iconType={folder} name='My Image File' />
+        <td>Photoes</td>
+        <td>-</td>
+        <td>Folder</td>
         <td>2 Days ago</td>
       </tr>
       <tr className='dark:hover:bg-gray-700 duration-75'>
