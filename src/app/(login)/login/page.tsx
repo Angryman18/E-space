@@ -5,10 +5,10 @@ import Image from "next/image";
 // import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
-  const currURL = window.location.href
-
+  
   const handleClick = () => {
     const url = new URL("https://sso.engine-app.com")
+    const currURL = window.location.href
     url.searchParams.append("next", `${currURL}/callback`)
     url.searchParams.append("next", currURL)
     window.location.replace(url)
