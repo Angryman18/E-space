@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { tableIcon, listIcon } from "@/icons";
 import Image from "next/image";
 import style from "./style.module.css";
@@ -8,14 +9,11 @@ import { ViewType } from "@/types";
 const ViewSwitch = () => {
   const [currentView, setCurrentView] = useState<ViewType>("List");
 
-  const generateViewClass = useCallback(
-    (isView: boolean) => {
-      return isView
-        ? style.view_switch_button + " " + style.view_switch_button_selected
-        : style.view_switch_button;
-    },
-    []
-  );
+  const generateViewClass = useCallback((isView: boolean) => {
+    return isView
+      ? style.view_switch_button + " " + style.view_switch_button_selected
+      : style.view_switch_button;
+  }, []);
 
   const handleChangeView = (view: ViewType) => {
     setCurrentView(view);

@@ -11,6 +11,9 @@ import videoIcon from "./video-file.svg";
 import docIcon from "./document.png";
 import tableIcon from "./table.svg";
 import listIcon from "./list.svg";
+import wave1 from './wave1.svg'
+import wave2 from './wave2.svg'
+import rightArrow from './right-arrow.svg'
 
 export {
   folder,
@@ -26,4 +29,7 @@ export {
   docIcon,
   tableIcon,
   listIcon,
+  wave1,
+  wave2,
+  rightArrow
 };

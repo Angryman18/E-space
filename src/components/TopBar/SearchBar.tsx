@@ -9,7 +9,7 @@ export default function SearchBar() {
   const {
     themeCtx: { isDark },
   } = useCtx();
-  console.log('is dark ', isDark ? search_dark : search_light)
+  // console.log('is dark ', isDark ? search_dark : search_light)
   return (
     <div className='my-4 mx-2'>
       <div

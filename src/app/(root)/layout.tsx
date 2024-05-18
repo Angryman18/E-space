@@ -6,6 +6,7 @@ import SideBar from "@/components/Sidebar/Sidebar";
 import SearchBar from "@/components/TopBar/SearchBar";
 import Recent from "@/components/RecentSection/Recent";
 import TitleText from "@/components/Text/TitleText";
+import UserContextProvider from "@/context/UserCtx";
 
 const inter = Inconsolata({
   subsets: ["latin"],
@@ -18,19 +19,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider>
-      <div className='flex'>
-        <div className='w-[18%]'>
-          <SideBar />
+    <UserContextProvider>
+      <ThemeProvider>
+        <div className='flex'>
+          <div className='w-[18%]'>
+            <SideBar />
+          </div>
+          <div className='w-[82%]'>
+            <SearchBar />
+            <hr className='my-4' />
+            <TitleText text='Folders' />
+            <Recent />
+            {children}
+          </div>
         </div>
-        <div className='w-[82%]'>
-          <SearchBar />
-          <hr className='my-4' />
-          <TitleText text='Folders' />
-          <Recent />
-          {children}
-        </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </UserContextProvider>
   );
 }
