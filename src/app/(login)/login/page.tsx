@@ -5,13 +5,12 @@ import Image from "next/image";
 // import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
-  const [text, setText] = useState("");
-  // const router = useRouter()
+  const currURL = window.location.href
 
   const handleClick = () => {
     const url = new URL("https://sso.engine-app.com")
-    url.searchParams.append("next", "http://localhost:3000/callback")
-    url.searchParams.append("next", "http://localhost:3000")
+    url.searchParams.append("next", `${currURL}/callback`)
+    url.searchParams.append("next", currURL)
     window.location.replace(url)
   };
 
