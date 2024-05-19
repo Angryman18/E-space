@@ -25,6 +25,7 @@ const nextConfig = {
   },
   publicRuntimeConfig: {
     STORE_API: process.env.STORE_API,
+    SSO_URL: process.env.NEXT_PUBLIC_SSO_URL,
   },
 };
 

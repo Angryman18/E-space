@@ -6,6 +6,7 @@ const User: React.FC<{}> = (props) => {
   const {
     userCtx: { user },
   } = useCtx();
+  console.log("Context ", user)
   return (
     <div className='flex select-none items-center justify-between duration-100 dark:hover:bg-gray-700 hover:bg-gray-50  hover:cursor-pointer hover:rounded-lg'>
       <div className='flex items-center'>

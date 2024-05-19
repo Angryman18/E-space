@@ -1,17 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { wave1, wave2 } from "@/icons";
 import Image from "next/image";
-// import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
-  
   const handleClick = () => {
-    const url = new URL("https://sso.engine-app.com")
-    const currURL = window.location.origin
-    url.searchParams.append("next", `${currURL}/callback`)
-    url.searchParams.append("next", currURL)
-    window.location.replace(url)
+    const url = new URL(process.env.NEXT_PUBLIC_SSO_URL!);
+    const currURL = window.location.origin;
+    url.searchParams.append("next", `${currURL}/callback`);
+    url.searchParams.append("next", currURL);
+    window.location.replace(url);
   };
 
   return (
