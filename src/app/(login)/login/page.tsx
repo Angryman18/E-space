@@ -8,7 +8,7 @@ const LoginPage = () => {
   
   const handleClick = () => {
     const url = new URL("https://sso.engine-app.com")
-    const currURL = window.location.href
+    const currURL = window.location.origin
     url.searchParams.append("next", `${currURL}/callback`)
     url.searchParams.append("next", currURL)
     window.location.replace(url)
