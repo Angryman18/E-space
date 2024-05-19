@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { wave1, wave2 } from "@/icons";
-import Image from "next/image";
+// import { wave1, wave2 } from "@/icons";
+import "./style.css";
+// import Image from "next/image";
 
 const LoginPage = () => {
   const handleClick = () => {
@@ -13,37 +14,41 @@ const LoginPage = () => {
   };
 
   return (
-    <div style={{ width: "100vw", height: "100vh", position: "relative", overflow: "hidden" }}>
-      <Image className='absolute -bottom-[10px] left-0 right-0 w-[100vw]' src={wave1} alt='wave' />
-      <Image
-        className='absolute rotate-180 -top-[10px] left-0 right-0 w-[100vw]'
-        src={wave2}
-        alt='wave'
-      />
-
-      <div className='z-40 font-bold absolute left-16 top-16 text-4xl text-white select-none'>
-        Engine Space
-      </div>
-      <div className='flex items-center justify-center border-2 border-black h-screen'>
-        {/* <button
-          onMouseEnter={() => setText(" ->")}
-          onMouseOut={() => setText("")}
-          className='px-8 py-4 bg-blue-500 text-xl transition-all ease-in-out outline-none hover:bg-blue-600 duration-75 text-white rounded-lg'
-        >
-          Login with Engine SSO{text}
-        </button> */}
-
-        <button
-          onClick={handleClick}
-          className='px-8 py-4 relative group text-white bg-blue-500 hover:bg-blue-600 text-xl rounded-lg transition-all duration-300 ease-in-out'
-        >
-          <span className='group-hover:pr-6 transition-all duration-300 ease-in-out'>
-            Login with Engine SSO
-          </span>
-          <span className='absolute pr-4 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out'>
-            {" →"}
-          </span>
-        </button>
+    <div className='bg-gray-100 min-h-screen flex items-center justify-center'>
+      <div className='wave-container relative'>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+          <div className='w-full max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl fade-in relative z-10'>
+            <div className='md:flex'>
+              <div className='w-full p-8 text-center'>
+                <h1 className='text-4xl font-bold text-blue-600 mb-6 hero-text flex items-center justify-center'>
+                  <i className='fas fa-rocket mr-3'></i> Engine
+                  <span className='before:block mx-2 before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-800 text-white relative inline-block'>
+                    <span className='relative text-white'>Space</span>
+                  </span>
+                </h1>
+                <div className='mb-6'>
+                  <h2 className='text-2xl font-semibold text-gray-700 mb-4'>
+                    Welcome to Engine Space!
+                  </h2>
+                  <ul className='text-left list-disc list-inside space-y-2 text-gray-600'>
+                    <li>Engine Space is offering 50MB storage per user completely free of cost.</li>
+                    <li>Safely store your documents with us.</li>
+                    <li>Access them anytime, anywhere.</li>
+                  </ul>
+                </div>
+                <button
+                  onClick={handleClick}
+                  className='mt-6 px-8 py-3 bg-blue-600 text-white rounded-full text-lg font-semibold shadow-lg transform transition hover:bg-blue-700 hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50'
+                >
+                  Login with Engine SSO
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='wave'></div>
+        <div className='wave'></div>
+        <div className='wave'></div>
       </div>
     </div>
   );
