@@ -9,7 +9,7 @@ const LoginPage = () => {
     const url = new URL(process.env.NEXT_PUBLIC_SSO_URL!);
     const currURL = window.location.origin;
     url.searchParams.append("next", `${currURL}/callback`);
-    url.searchParams.append("next", currURL);
+    url.searchParams.append("next", window.location.href);
     window.location.replace(url);
   };
 

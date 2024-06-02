@@ -2,10 +2,7 @@
 import { Inconsolata } from "next/font/google";
 import "@/app/globals.css";
 import ThemeProvider from "@/context/ThemeCtx";
-import SideBar from "@/components/Sidebar/Sidebar";
-import SearchBar from "@/components/TopBar/SearchBar";
-import Recent from "@/components/RecentSection/Recent";
-import TitleText from "@/components/Text/TitleText";
+import LayoutContainer from "@/components/HomeLayoutContainer/LayoutContainer";
 import UserContextProvider from "@/context/UserCtx";
 
 const inter = Inconsolata({
@@ -21,18 +18,7 @@ export default function RootLayout({
   return (
     <UserContextProvider>
       <ThemeProvider>
-        <div className='flex'>
-          <div className='w-[18%]'>
-            <SideBar />
-          </div>
-          <div className='w-[82%]'>
-            <SearchBar />
-            <hr className='my-4' />
-            <TitleText text='Folders' />
-            <Recent />
-            {children}
-          </div>
-        </div>
+        <LayoutContainer>{children}</LayoutContainer>
       </ThemeProvider>
     </UserContextProvider>
   );

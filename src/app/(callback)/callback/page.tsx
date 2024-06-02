@@ -1,14 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { userSignIn } from "@/service/storeService";
 import useCtx from "@/hooks/useContext";
-import { signOut } from "@/utils/auth-util";
+import { handleJWTExpired, signOut } from "@/utils/auth-util";
 import toast from "react-hot-toast";
 
 const Callback = () => {
-  // const [loading, setLoading] = useState<boolean>(false);
   const searchParams = useSearchParams();
   const { userCtx } = useCtx();
   const router = useRouter();
@@ -25,9 +24,7 @@ const Callback = () => {
           router.replace(next);
         })
         .catch((err) => {
-          toast.error("Something went wrong");
-          signOut();
-          router.push("/login");
+          handleJWTExpired(err, router)
         });
     } else router.replace("/login");
   }, [token, next, router, userCtx]);

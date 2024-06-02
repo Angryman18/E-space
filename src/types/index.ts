@@ -10,3 +10,6 @@ export type TUser = {
   provider: string;
   profile: null | string;
 };
+
+
+export enum TLoader { Text, Dot }

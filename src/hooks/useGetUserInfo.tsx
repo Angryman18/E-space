@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction, useCallback, useContext, useEffect, useState 
 
 export default function useGetUserInformations(setState?: Dispatch<SetStateAction<TUser>>) {
   const [userData, setUserData] = useState<TUser>();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [IsError, setIsError] = useState(false);
 
   const memorizedSignIn = useCallback(fetchUserInfo, []);
@@ -12,7 +12,6 @@ export default function useGetUserInformations(setState?: Dispatch<SetStateActio
   useEffect(() => {
     (async () => {
       try {
-        setLoading(true);
         const res = await memorizedSignIn();
         setUserData(res!);
         setState!(res!);

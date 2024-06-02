@@ -7,22 +7,17 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/signin",
-        destination: process.env.STORE_API + "/v1" + "/signin",
+        source: "/:path",
+        destination: process.env.STORE_API + "/v1" + "/:path",
         permanent: false,
-      },
-      {
-        source: "/verify",
-        destination: process.env.STORE_API + "/v1" + "/verify",
-        permanent: false,
-      },
-      {
-        source: "/user-info",
-        destination: process.env.STORE_API + "/v1" + "/user-info",
-        permanent: false,
-      },
+      }
     ];
   },
+images: {
+  remotePatterns: [{
+    hostname: "**",
+  }]
+},
   publicRuntimeConfig: {
     STORE_API: process.env.STORE_API,
     SSO_URL: process.env.NEXT_PUBLIC_SSO_URL,

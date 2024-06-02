@@ -9,5 +9,7 @@ export const APIRotue = {
 export const STOREAPI = {
   VERIFY: "/verify",
   SIGNIN: "/signin",
-  USER_INFO: "/user-info"
+  USER_INFO: "/user-info",
+  CREATE_PROFILE: '/create-profile',
+  USER_CONTENT: "/user-content"
 };

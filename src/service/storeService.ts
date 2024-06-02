@@ -22,3 +22,21 @@ export const fetchUserInfo = async () => {
     return Promise.reject(err);
   }
 };
+
+export const createUserProfile = async () => {
+  try {
+    const res = await request.post<null, { profileID: string }>(STOREAPI.CREATE_PROFILE, null);
+    return res.data;
+  } catch (err: unknown) {
+    return Promise.reject(err);
+  }
+};
+
+export const getUserContent = async () => {
+  try {
+    const res = await request.post(STOREAPI.USER_CONTENT, null);
+    return res.data
+  } catch(err: unknown) {
+    return Promise.reject(err)
+  }
+}
