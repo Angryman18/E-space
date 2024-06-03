@@ -4,6 +4,7 @@ export default function SideBar() {
     <div
       className='bg-gray-200 dark:bg-gray-800 dark:text-white rounded-md m-4 py-2 px-4'
       style={{ height: "calc(100vh - 100px)" }}
+      data-testid="sidebar"
     >
       <User />
     </div>

@@ -5,7 +5,7 @@ const Recent = () => {
   const handleFolderClick = (val: string) => console.log("Hello");
   const handleCreateClick = () => console.log("Hello");
   return (
-    <div className='overflow-x-scroll'>
+    <div className='overflow-x-scroll' data-testid="recent-section">
       <div className='inline-flex overflow-hidden'>
         <BaseButtonStructure.Create handleCreateClick={handleCreateClick} />
         <BaseButtonStructure

@@ -14,9 +14,10 @@ const User: React.FC<{}> = (props) => {
           width={36}
           height={36}
           alt='user'
+          data-testid="user:image"
           className='bg-white rounded-full dark:bg-white'
         />
-        <div className='font-bold dark:text-white pl-2'>{user.fullname}</div>
+        <div data-testid="user:fullname" className='font-bold dark:text-white pl-2'>{user.fullname}</div>
       </div>
       <div>
         <Image src={arrow_down} width={16} height={16} alt='arrow_down' />

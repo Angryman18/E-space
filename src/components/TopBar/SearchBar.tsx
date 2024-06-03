@@ -11,7 +11,7 @@ export default function SearchBar() {
   } = useCtx();
   // console.log('is dark ', isDark ? search_dark : search_light)
   return (
-    <div className='my-4 mx-2'>
+    <div className='my-4 mx-2' data-testid="search-bar">
       <div
         className={`flex border-2 rounded-full w-[40%] min-w-64 overflow-hidden pr-4 ${
           isElementFocused && "border-gray-400"
