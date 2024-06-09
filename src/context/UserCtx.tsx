@@ -1,5 +1,5 @@
 import { TLoader, TUser } from "@/types";
-import { createContext, Dispatch, SetStateAction, useCallback, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useCallback, useEffect, useState } from "react";
 import useGetUserInformations from "@/hooks/useGetUserInfo";
 import jsCookie from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -46,13 +46,11 @@ export default function UserContextProvider({ children }: { children: React.Reac
     }
   }, []);
 
-  if (error) {
-    toast.error("We are sorry something went wrong, please try again");
-    signOut();
-    router.push(RouteConst.LOGIN);
-    return null;
-  }
+  // IF ERROR OCCURED FETCHING USER INFO NO CHILDREN WILL BE RENDERED
+  if (error) return null;
+  // FETCHING USER INFORMATIONS
   if (loading) return <Loader />;
+
   return (
     <UserContext.Provider value={{ user, setUser, fetchAndSaveUserInfo }}>
       {children}

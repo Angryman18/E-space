@@ -14,6 +14,7 @@ export const removeCookies = () => {
 };
 
 export const signOut = () => {
+  console.log(removeCookies)
   removeCookies();
 };
 

@@ -1,0 +1,56 @@
+.dropdown-appear {
+  animation: expand 0.2s ease-out;
+}
+
+@keyframes expand {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 144px;
+  }
+}
+
+.option-btn {
+  animation: appear 170ms ease-out;
+  @apply text-left px-4 h-12 hover:bg-slate-100 dark:hover:bg-slate-600;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.dropdown-disappear {
+  animation: disappear 200ms ease-out forwards;
+}
+
+@keyframes disappear {
+  0% {
+    height: 144px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+.option-btn-disappear {
+  @apply text-left px-4 h-12 hover:bg-slate-100;
+  animation: Optdisappear 100ms ease-out forwards;
+}
+
+@keyframes Optdisappear {
+  0% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}

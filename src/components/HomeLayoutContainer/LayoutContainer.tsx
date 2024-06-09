@@ -14,10 +14,10 @@ const LayoutContainer = ({ children }: { children: React.ReactNode }) => {
   if (loading) return <div>CREATING USER PROFILE PLEASE WAIT...</div>
   return (
     <div className='flex'>
-      <div className='w-[18%]'>
+      <div className='w-[18%] min-w-64'>
         <SideBar />
       </div>
-      <div className='w-[82%]'>
+      <div className='w-[82%] mx-8'>
         <SearchBar />
         <hr className='my-4' />
         <TitleText text='Folders' />

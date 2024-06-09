@@ -7,10 +7,25 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path",
-        destination: process.env.STORE_API + "/v1" + "/:path",
+        source: "/signin",
+        destination: process.env.STORE_API + "/v1" + "/signin",
         permanent: false,
-      }
+      },
+      {
+        source: "/verify",
+        destination: process.env.STORE_API + "/v1" + "/verify",
+        permanent: false,
+      },
+      {
+        source: "/user-info",
+        destination: process.env.STORE_API + "/v1" + "/user-info",
+        permanent: false,
+      },
+      {
+        source: "/create-profile",
+        destination: process.env.STORE_API + "/v1" + "/create-profile",
+        permanent: false,
+      },
     ];
   },
 images: {

@@ -3,7 +3,6 @@ import type { NextRequest } from "next/server";
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  console.log("Intercepted...");
   const token = request.cookies.get("token");
   const currURL = new URL(request.url);
 
@@ -15,6 +14,7 @@ export function middleware(request: NextRequest) {
       // thus we get to know user is requesting to the something /something/something
       const pathname = request.nextUrl.pathname;
       const redirectURL = new URL("/login", request.url);
+      
       if (!pathname.includes("login") && pathname !== "/") {
         redirectURL.searchParams.append("next", encodeURI(request.nextUrl.href));
       }
